@@ -1,8 +1,8 @@
 import { Component } from 'react'
-import styles from './App.module.css'
+import './styles.css'
 
 export default class App extends Component {
   render() {
-    return <p className={styles.helloWorld}>Hello World!</p>
+    return <p className="text-blue-600">Hello World!</p>
   }
 }
