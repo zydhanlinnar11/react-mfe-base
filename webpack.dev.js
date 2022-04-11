@@ -9,6 +9,6 @@ module.exports = merge(common, {
     historyApiFallback: true,
   },
   output: {
-    publicPath: 'http://localhost:3001',
+    publicPath: 'http://localhost:3001/',
   },
 })
