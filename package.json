@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Base project for React micro front-ends.",
   "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js",
+    "start": "webpack-dev-server --open --liveReload --config webpack.dev.js",
+    "start:prod": "webpack-dev-server --open --config webpack.prod.js",
     "release": "standard-version"
   },
   "author": {
@@ -15,7 +19,11 @@
     "@commitlint/config-conventional": "^16.2.1",
     "@swc/cli": "^0.1.57",
     "@swc/core": "^1.2.165",
+    "html-webpack-plugin": "^5.5.0",
     "husky": "^7.0.4",
-    "standard-version": "^9.3.2"
+    "standard-version": "^9.3.2",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
   }
 }
