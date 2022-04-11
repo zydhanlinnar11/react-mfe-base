@@ -1,15 +1,25 @@
 const { merge } = require('webpack-merge')
 const common = require('./webpack.common.js')
 const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = merge(common, {
   mode: 'production',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+    ],
+  },
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: 'https://react-mfe.zydhan.com',
+    publicPath: 'http://localhost:8080/',
   },
   optimization: {
     minimize: true,
   },
+  plugins: [new MiniCssExtractPlugin()],
 })

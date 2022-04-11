@@ -4,6 +4,14 @@ const path = require('path')
 
 module.exports = merge(common, {
   mode: 'development',
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
   devServer: {
     port: 3001,
     historyApiFallback: true,
